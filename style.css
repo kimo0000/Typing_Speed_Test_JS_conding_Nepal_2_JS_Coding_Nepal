@@ -1,0 +1,87 @@
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: blueviolet;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+.wrapper {
+  width: 70%;
+  max-width: 650px;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.typing_text {
+  border: 1px solid #ddd;
+  width: 50%;
+  /* opacity: 0;
+  position: absolute; */
+}
+.text {
+  font-size: 18px;
+}
+.text span {
+  position: relative;
+}
+.text span.active::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: blueviolet;
+  opacity: 0;
+  animation: blink 0.8s infinite;
+}
+@keyframes blink {
+  50% {
+    opacity: 1;
+  }
+}
+.text span.correct {
+  color: green;
+}
+.text span.incorrect {
+  color: red;
+  background-color: rgba(255, 0, 0, 0.285);
+  border-radius: 2px;
+}
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.controls p span {
+  font-weight: 700;
+  color: blueviolet;
+}
+.controls button {
+  padding: 10px;
+  font-weight: 700;
+  background-color: blueviolet;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+.controls button:hover {
+  opacity: 1;
+}
